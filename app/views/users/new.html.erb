@@ -1,0 +1,17 @@
+<h1>Register and confess your sins</h1>
+
+<% if flash[:errors] %>
+  <%  flash[:errors].each do |error| %>
+  <p ><%= error %></p>
+  <% end %>
+<% end %>
+
+<form action='/register' method='post'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <label>Name:<input type='text' name='user[name]' /></label>
+  <label>Email:<input type='text' name='user[email]' /></label>
+  <label>Password:<input type='password' name='user[password]' /></label>
+  <label>Confirm password:<input type='password' name='user[password_confirmation]' /></label>
+  <input type='submit' value='Register' />
+</form>

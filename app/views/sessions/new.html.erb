@@ -1,0 +1,13 @@
+<h1>Log in</h1>
+<% if flash[:log_errors] %>
+<p><%= flash[:log_errors] %></p>
+<% end %>
+
+<form action='/login' method='post'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+</label>
+  <label>Name:<input type='text' name='user[email]' /></label>
+  <label>Password:<input type='text' name='user[password]' /></label>
+  <input type='submit' value='Log in' />
+</form>
+<a href="/users/new">Not a user? Register now.</a></p>
